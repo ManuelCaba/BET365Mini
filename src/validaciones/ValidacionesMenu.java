@@ -24,10 +24,13 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("	   MENU REGISTRO");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Registrar [1]");
 			System.out.println("Entrar como usuario [2]");
 			System.out.println("Entrar como anonimo [3]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -58,10 +61,13 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("	  MENU APLICACION");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Menu Configuraciones [1]");
 			System.out.println("Menu Listas [2]");
 			System.out.println("Menu Apuestas [3]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -92,10 +98,13 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("	MENU CONFIGURACIONES");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Configuraciones Usuario [1]");
 			System.out.println("Configuraciones Partido [2]");
 			System.out.println("Registrar Equipo [3]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -127,11 +136,14 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("     CONFIGURACIONES USUARIO");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Modificar Password [1]");
 			System.out.println("Ingresar Dinero [2]");
 			System.out.println("Retirar Dinero [3]");
 			System.out.println("Solicitar Baja [4]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -163,11 +175,14 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("      CONFIGURACIONES PARTIDO");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Registrar Partido [1]");
 			System.out.println("Actualizar Cuotas [2]");
 			System.out.println("Finalizar Partido [3]");
 			System.out.println("Aplazar Partido [4]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -199,11 +214,14 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("         ACTUALIZAR CUOTAS");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Actualizar Cuota Local [1]");
 			System.out.println("Actualizar Cuota Empate [2]");
 			System.out.println("Actualizar Cuota Visitante [3]");
 			System.out.println("Actualizar Cuotas [4]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -233,9 +251,12 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("            MENU APUESTAS");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Realizar Apuesta [1]");
 			System.out.println("Comprobar Apuesta [2]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -268,12 +289,15 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("             MENU LISTAS");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Listas Usuarios [1]");
 			System.out.println("Lista Equipos [2]");
 			System.out.println("Listas Clasificaciones [3]");
 			System.out.println("Listas Partidos [4]");
 			System.out.println("Listas Apuestas [5]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -304,10 +328,13 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("          LISTAS USUARIOS");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Lista Usuarios [1]");
 			System.out.println("Lista Usuarios Alta [2]");
 			System.out.println("Lista Usuarios Baja [3]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -338,10 +365,13 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("       LISTAS CLASIFICACIONES");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Lista Clasificacion [1]");
 			System.out.println("Lista Clasificacion Local [2]");
 			System.out.println("Lista Clasificacion Visitante [3]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -373,11 +403,14 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("          LISTAS PARTIDOS");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Lista Partidos [1]");
 			System.out.println("Lista Partidos Finalizados [2]");
 			System.out.println("Lista Partidos No Finalizados [3]");
 			System.out.println("Lista Partidos Equipo [4]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();
@@ -409,11 +442,14 @@ public class ValidacionesMenu {
 		
 		do
 		{
+			System.out.println("          LISTAS APUESTAS");
+			System.out.println("-----------------------------------");
 			System.out.println("Salir [0]");
 			System.out.println("Lista Apuestas [1]");
 			System.out.println("Lista Apuestas Comprobadas [2]");
 			System.out.println("Lista Apuestas No Comprobadas [3]");
 			System.out.println("Lista Apuestas Usuario [4]");
+			System.out.println("-----------------------------------");
 			System.out.print("Elige una opcion: ");
 			
 			opcion = teclado.nextInt();

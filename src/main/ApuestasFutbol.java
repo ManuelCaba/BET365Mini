@@ -28,6 +28,23 @@ import validaciones.ValidacionesUsuario;
 
 
 /*
+ * -------------------------------------------------------------------------------------------------------------------------------------------------
+ * Nombre del Programa: ApuestasFutbol
+ * Comentrario: Programa que gestiona una aplicación de apuestas deportivas de fútbol, que proporciona diferentes opciones dependiendo del tipo
+ * de usuario logueado (Administrador, Apostador, Anónimo (Visitante))
+ * 
+ * Entradas: 
+ * 		- En el programa encontraremos solicitudes por parte del sistema de propiedades de diversas clases (Apuesta, Equipo, Partido, Usuario) para
+ * 		  la gestión del mismo.
+ * 		- Opciones de los distintos menús que nos encontraremos a lo largo del programa.
+ * Salidas:
+ * 		- Mensajes de ayuda al usuario.
+ * 		- Listas de Apuestas, Equipos, Partidos, Clasificaciones y Usuarios.
+ * Restricciones:
+ * 		- Las restricciones especifificadas en las diversas clases.
+ * 		- Las opciones de los menús deben encontrarse dentro del rango especificado en las interfaces de éstos.
+ * -------------------------------------------------------------------------------------------------------------------------------------------------
+ * 
  * PG
  * Inicio
  * 	mostrarMenuRegistroYLeerYValidarOpcion*
@@ -237,6 +254,7 @@ public class ApuestasFutbol {
     	ValidacionesEquipo validacionesEquipo = new ValidacionesEquipo();
     	ValidacionesPartido validacionesPartido = new ValidacionesPartido();
     	ValidacionesApuesta validacionesApuesta = new ValidacionesApuesta();
+    	
     	PersistenciaUsuario persistenciaUsuario = new PersistenciaUsuario();
     	PersistenciaUsuarioApostador persistenciaUsuarioApostador = new PersistenciaUsuarioApostador();
     	PersistenciaEquipo persistenciaEquipo = new PersistenciaEquipo();
@@ -267,7 +285,7 @@ public class ApuestasFutbol {
 			
 			if(conexion != null)
 			{
-				System.out.println("Se ha establecido una conexion");
+				//System.out.println("Se ha establecido una conexion");
 				
 		    	//mostrarMenuRegistroYLeerYValidarOpcion*
 		    	opcion = validacionesMenu.mostrarMenuRegistroYLeerYValidarOpcion();
@@ -902,44 +920,48 @@ public class ApuestasFutbol {
 			    					switch(opcion)
 			    					{
 			    						case 1:
-			    							//Listas Usuarios
 			    							
-			    							System.out.println();
-			    							
-			    							//mostrarMenuListasUsuarioYLeerYValidarOpcion*
-			    							opcion = validacionesMenu.mostrarMenuListasUsuariosYLeerYValidarOpcion();
-			    							
-			    							while(opcion != 0) //Mientras quiera realizar listas de usuarios
+			    							if(esUsuario && !esUsuarioApostador) //Si es un Administrador
 			    							{
-			    								switch(opcion)
-			    								{
-			    									case 1:
-			    										//Listar Usuarios
-			    										System.out.println();
-			    										
-			    										persistenciaUsuarioApostador.listarUsuarios(conexion);
-			    										
-			    										System.out.println();
-			    									break;
-			    									case 2:
-			    										//Listar Usuarios Alta
-			    										System.out.println();
-			    										
-			    										persistenciaUsuarioApostador.listarUsuarios(true, conexion);
-			    										
-			    										System.out.println();
-			    									break;
-			    									case 3:
-			    										//Listar Usuarios Baja
-			    										System.out.println();
-			    										
-			    										persistenciaUsuarioApostador.listarUsuarios(false, conexion);
-			    										
-			    										System.out.println();
-			    								}		    								
-			    								
+				    							//Listas Usuarios
+				    							
+				    							System.out.println();
+				    							
 				    							//mostrarMenuListasUsuarioYLeerYValidarOpcion*
 				    							opcion = validacionesMenu.mostrarMenuListasUsuariosYLeerYValidarOpcion();
+				    							
+				    							while(opcion != 0) //Mientras quiera realizar listas de usuarios
+				    							{
+				    								switch(opcion)
+				    								{
+				    									case 1:
+				    										//Listar Usuarios
+				    										System.out.println();
+				    										
+				    										persistenciaUsuarioApostador.listarUsuarios(conexion);
+				    										
+				    										System.out.println();
+				    									break;
+				    									case 2:
+				    										//Listar Usuarios Alta
+				    										System.out.println();
+				    										
+				    										persistenciaUsuarioApostador.listarUsuarios(true, conexion);
+				    										
+				    										System.out.println();
+				    									break;
+				    									case 3:
+				    										//Listar Usuarios Baja
+				    										System.out.println();
+				    										
+				    										persistenciaUsuarioApostador.listarUsuarios(false, conexion);
+				    										
+				    										System.out.println();
+				    								}		    								
+				    								
+					    							//mostrarMenuListasUsuarioYLeerYValidarOpcion*
+					    							opcion = validacionesMenu.mostrarMenuListasUsuariosYLeerYValidarOpcion();
+				    							}
 			    							}
 			    						break;
 			    						case 2:
@@ -993,56 +1015,60 @@ public class ApuestasFutbol {
 			    							}
 			    						break;
 			    						case 4:
-			    							//Listas Partidos
 			    							
-			    							System.out.println();
-			    							
-			    							//mostrarMenuListasPartidosYLeerYValidarOpcion*
-			    							opcion = validacionesMenu.mostrarMenuListasPartidosYLeerYValidarOpcion();
-			    							
-			    							while(opcion != 0) //Mientras quiera realizar listas de partidos
+			    							if(esUsuario && !esUsuarioApostador) //Si no es un Administrador
 			    							{
-			    								switch(opcion)
-			    								{
-			    									case 1:
-			    										//Lista Partidos
-			    										System.out.println();
-			    										
-			    										persistenciaPartido.listarPartidos(conexion);
-			    										
-			    										System.out.println();
-			    									break;
-			    									case 2:
-			    										//Lista Partidos Finalizados
-			    										System.out.println();
-			    										
-			    										persistenciaPartido.listarPartidos(true, conexion);
-			    										
-			    										System.out.println();
-			    									break;
-			    									case 3:
-			    										//Lista Partidos No Finalizados
-			    										System.out.println();
-			    										
-			    										persistenciaPartido.listarPartidos(false, conexion);
-			    										
-			    										System.out.println();
-			    									break;
-			    									case 4:
-			    										//Lista Partidos Equipo
-			    										System.out.println();
-			    										
-			    										IDEquipoLocal = validacionesEquipo.leerYValidarIDEquipo();
-			    										
-			    										System.out.println();
-			    										
-			    										persistenciaPartido.listarPartidos(IDEquipoLocal, conexion);
-			    										
-			    										System.out.println();
-			    								}		    								
-			    								
+				    							//Listas Partidos
+				    							
+				    							System.out.println();
+				    							
 				    							//mostrarMenuListasPartidosYLeerYValidarOpcion*
 				    							opcion = validacionesMenu.mostrarMenuListasPartidosYLeerYValidarOpcion();
+				    							
+				    							while(opcion != 0) //Mientras quiera realizar listas de partidos
+				    							{
+				    								switch(opcion)
+				    								{
+				    									case 1:
+				    										//Lista Partidos
+				    										System.out.println();
+				    										
+				    										persistenciaPartido.listarPartidos(conexion);
+				    										
+				    										System.out.println();
+				    									break;
+				    									case 2:
+				    										//Lista Partidos Finalizados
+				    										System.out.println();
+				    										
+				    										persistenciaPartido.listarPartidos(true, conexion);
+				    										
+				    										System.out.println();
+				    									break;
+				    									case 3:
+				    										//Lista Partidos No Finalizados
+				    										System.out.println();
+				    										
+				    										persistenciaPartido.listarPartidos(false, conexion);
+				    										
+				    										System.out.println();
+				    									break;
+				    									case 4:
+				    										//Lista Partidos Equipo
+				    										System.out.println();
+				    										
+				    										IDEquipoLocal = validacionesEquipo.leerYValidarIDEquipo();
+				    										
+				    										System.out.println();
+				    										
+				    										persistenciaPartido.listarPartidos(IDEquipoLocal, conexion);
+				    										
+				    										System.out.println();
+				    								}		    								
+				    								
+					    							//mostrarMenuListasPartidosYLeerYValidarOpcion*
+					    							opcion = validacionesMenu.mostrarMenuListasPartidosYLeerYValidarOpcion();
+				    							}
 			    							}
 			    						break;
 			    						case 5:
@@ -1050,8 +1076,8 @@ public class ApuestasFutbol {
 			    							
 			    							System.out.println();
 			    							
-			    							//mostrarMenuApuestasYLeerYValidarOpcion*
-			    							opcion = validacionesMenu.mostrarMenuApuestasYLeerYValidarOpcion();
+			    							//mostrarMenuListasApuestasYLeerYValidarOpcion*
+			    							opcion = validacionesMenu.mostrarMenuListasApuestasYLeerYValidarOpcion();
 			    							
 			    							while(opcion != 0) //Mientras quiera realizar listas de partidos
 			    							{
@@ -1094,12 +1120,14 @@ public class ApuestasFutbol {
 			    										System.out.println();
 			    								}		    								
 			    								
-				    							//mostrarMenuApuestasYLeerYValidarOpcion*
-				    							opcion = validacionesMenu.mostrarMenuApuestasYLeerYValidarOpcion();
+				    							//mostrarMenuListasApuestasYLeerYValidarOpcion*
+			    								opcion = validacionesMenu.mostrarMenuListasApuestasYLeerYValidarOpcion();
 			    							}
 			    					}
 			    					
 				    				//mostrarMenuListasYLeerYValidarOpcion*
+			    					System.out.println();
+			    					
 				    				opcion = validacionesMenu.mostrarMenuListasYLeerYValidarOpcion();
 			    				}
 				    		break;
@@ -1130,6 +1158,9 @@ public class ApuestasFutbol {
 				    							
 				    							System.out.println();
 				    							
+				    							//Mostrar Saldo Actual
+				    							System.out.println("Su saldo actual es de: "+usuarioApostador.getBalance()+"€\n");
+				    							
 				    							//Leer Y Validar IDPartido
 				    							IDPartido = validacionesPartido.leerYValidarIDPartido();
 				    							
@@ -1145,7 +1176,7 @@ public class ApuestasFutbol {
 				    									//Leer Y Validar Importe Apuesta
 				    									importeApuesta = validacionesApuesta.leerYValidarImporteApuesta();
 				    									
-				    									if(importeApuesta > usuarioApostador.getBalance()) //Si el importe de la apuesta supera el saldo del usuario
+				    									if(importeApuesta <= usuarioApostador.getBalance()) //Si el importe de la apuesta supera el saldo del usuario
 				    									{
 				    										//Modificar Saldo Jugador
 				    										usuarioApostador.changeBalance(-importeApuesta);
@@ -1165,6 +1196,9 @@ public class ApuestasFutbol {
 					    									persistenciaApuesta.registrarApuesta(apuesta, conexion);
 					    									
 					    									System.out.println("\nApuesta registrada con exito\n");
+					    									
+							    							//Mostrar Saldo Actual
+							    							System.out.println("Su saldo actual es de: "+usuarioApostador.getBalance()+"€\n");
 				    									}
 				    									else
 				    									{
@@ -1288,6 +1322,8 @@ public class ApuestasFutbol {
 				    					}
 				    					
 					    				//mostrarMenuApuestasYLeerYValidarOpcion
+				    					System.out.println();
+				    					
 					    				opcion = validacionesMenu.mostrarMenuApuestasYLeerYValidarOpcion();
 				    				}
 			    				}

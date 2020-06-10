@@ -53,10 +53,23 @@ public class TestEquipo {
 		System.out.println("Metodos Sobreescritos y compareTo\n");
 		
 		System.out.println("porDefecto.hashCode(); --> "+porDefecto.hashCode());
-		System.out.println("conParametros.compareTo(conParametrosError); --> "+conParametros.compareTo(conParametrosError));
-		System.out.println("conParametros.equals(conParametrosError); --> "+conParametros.equals(conParametrosError));
+		System.out.println("conParametros.hashCode(); --> "+conParametros.hashCode());
+		System.out.println("deCopia.hashCode(); --> "+deCopia.hashCode());
+		
+		System.out.println();
+		
+		System.out.println("conParametros.compareTo(porDefecto); --> "+conParametros.compareTo(porDefecto));
+		System.out.println("conParametros.compareTo(deCopia); --> "+conParametros.compareTo(deCopia));
+		
+		System.out.println();
+		
+		System.out.println("conParametros.equals(porDefecto) --> "+conParametros.equals(porDefecto));
+		System.out.println("conParametros.equals(deCopia); --> "+conParametros.equals(deCopia));
+		
+		System.out.println();
+		
+		System.out.println("porDefecto.clone().toString(); --> "+porDefecto.clone().toString());
 		System.out.println("deCopia.clone().toString(); --> "+deCopia.clone().toString());
-
 	}
 
 }

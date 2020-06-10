@@ -13,8 +13,9 @@ import persistencias.PersistenciaClasificaciones;
 import persistencias.PersistenciaEquipo;
 import persistencias.PersistenciaPartido;
 import persistencias.PersistenciaUsuarioApostador;
+import validaciones.ValidacionesMenu;
 
-public class TestDeMierda {
+public class TestGeneral {
 
 	public static void main(String[] args) {
 		String sourceURL = "jdbc:sqlserver://localhost";
@@ -26,6 +27,8 @@ public class TestDeMierda {
 		PersistenciaUsuarioApostador pup = new PersistenciaUsuarioApostador();
 		PersistenciaClasificaciones pc = new PersistenciaClasificaciones();
 		PersistenciaApuesta pa = new PersistenciaApuesta();
+		
+		ValidacionesMenu vm = new ValidacionesMenu();
 		
 		try {
 			Connection conexion = DriverManager.getConnection(sourceURL, usuarioSQL, password);
@@ -40,6 +43,18 @@ public class TestDeMierda {
 				//pp.listarPartidos(false, conexion);
 				//pp.listarPartidos("GTFE", conexion);
 				//pa.listarApuestas(true, conexion);
+				//vm.mostrarMenuRegistroYLeerYValidarOpcion();
+				//vm.mostrarMenuAplicacionYLeerYValidarOpcion();
+				//vm.mostrarMenuConfiguracionesYLeerYValidarOpcion();
+				//vm.mostrarMenuConfiguracionesUsuarioYLeerYValidarOpcion();
+				//vm.mostrarMenuConfiguracionesPartidoYLeerYValidarOpcion();
+				//vm.mostrarMenuActualizarCuotasYLeerYValidarOpcion();
+				//vm.mostrarMenuApuestasYLeerYValidarOpcion();
+				//vm.mostrarMenuListasYLeerYValidarOpcion();
+				//vm.mostrarMenuListasUsuariosYLeerYValidarOpcion();
+				//vm.mostrarMenuListasClasificacionesYLeerYValidarOpcion();
+				//vm.mostrarMenuListasPartidosYLeerYValidarOpcion();
+				vm.mostrarMenuListasApuestasYLeerYValidarOpcion();
 			}
 			
 		} catch (SQLException e) {
